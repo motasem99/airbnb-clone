@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Image from 'next/image';
 import {
   SearchIcon,
@@ -8,6 +10,8 @@ import {
 } from '@heroicons/react/solid';
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState('');
+
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
       {/** Left */}
@@ -23,6 +27,8 @@ const Header = () => {
       {/** Middle */}
       <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
         <input
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'
           type='text'
           placeholder='Start your search'
