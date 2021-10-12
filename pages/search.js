@@ -52,7 +52,7 @@ const Search = ({ searchResult }) => {
           </div>
         </section>
 
-        <section className='hidden xl:inline-flex'>
+        <section className='hidden xl:inline-flex xl:min-w-[600px]'>
           <Map />
         </section>
       </main>
