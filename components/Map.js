@@ -58,8 +58,22 @@ const Map = ({ searchResult }) => {
               closeOnClick={true}
               latitude={result.lat}
               longitude={result.long}
+              className='z-50 text-red-500 text-sm font-bold'
             >
-              {result.title}
+              <div className='relative  '>
+                <Image
+                  src={result.img}
+                  height={100}
+                  width={220}
+                  className='rounded-lg '
+                />
+                <div className=''>
+                  <p className='text-red-500 text-xs '>{result.title}</p>
+                  <p className='text-black font-semibold text-xs'>
+                    {result.price}
+                  </p>
+                </div>
+              </div>
             </Popup>
           ) : (
             false
